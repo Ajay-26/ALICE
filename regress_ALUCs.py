@@ -20,7 +20,8 @@ X_phones = [0.6675, 10.0683, -0.2763, -0.0009, 42.7907]
 X_syls = [0.3094, 5.5473, -0.1538, -0.0006, 23.2143]
 X_words = [0.1697, 3.5229, -0.0920, -0.0003, 13.9089]
 
-F = np.column_stack((F,np.ones((F.shape[0],1))))
+F = F.reshape(-1,4)
+F = np.concatenate((F, np.ones((F.shape[0], 1))), axis = 1)
 
 words_est = np.dot(F,X_words)
 words_est = words_est.clip(min = 0)
