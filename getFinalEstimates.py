@@ -28,7 +28,7 @@ uq_files = list(set(fileid))
 
 text_file = open(curdir + "/ALICE_output.txt", "w")
 
-text_file.write("FileID \t phonemes \t syllables \t words\n")
+text_file.write("FileID\tphonemes\tsyllables\twords\n")
 
 for file in uq_files:
     count_phones = 0
